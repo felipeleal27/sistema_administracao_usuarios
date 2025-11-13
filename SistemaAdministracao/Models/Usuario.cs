@@ -6,6 +6,6 @@
         public string Nome { get; set; } = null!;
         public string Email { get; set; } = null!;
 
-        public ICollection<UsuarioPapel>? UsuariosPapeis { get; set; }
+        public ICollection<UsuarioPapel> UsuariosPapeis { get; set; } = new List<UsuarioPapel>();
     }
 }

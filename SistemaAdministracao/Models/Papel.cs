@@ -9,7 +9,7 @@
         public int IdSistema { get; set; }
         public Sistema? Sistema { get; set; }
 
-        public ICollection<UsuarioPapel>? UsuariosPapeis { get; set; }
-        public ICollection<PapelPermissao>? PapeisPermissoes { get; set; }
+        public ICollection<UsuarioPapel> UsuariosPapeis { get; set; } = new List<UsuarioPapel>();
+        public ICollection<PapelPermissao> PapeisPermissoes { get; set; } = new List<PapelPermissao>();
     }
 }

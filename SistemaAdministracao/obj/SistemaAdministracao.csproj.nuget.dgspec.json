@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj": {}
+    "c:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj": {
+    "c:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj",
+        "projectUniqueName": "c:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj",
         "projectName": "SistemaAdministracao",
-        "projectPath": "C:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj",
+        "projectPath": "c:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj",
         "packagesPath": "C:\\Users\\felipe.leal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\obj\\",
+        "outputPath": "c:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -52,15 +52,21 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.10, )"
             },
-            "Microsoft.EntityFrameworkCore.InMemory": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.10, )"
+              "version": "[8.0.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.10, )"
             },

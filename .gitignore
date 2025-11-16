@@ -45,6 +45,7 @@ packages/
 *.cache
 *.db
 *.db-journal
+**/obj/
 
 # Env
 .env

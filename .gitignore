@@ -1,0 +1,70 @@
+# Build
+bin/
+obj/
+out/
+Debug/
+Release/
+
+# .NET
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Usuário e IDE
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.vs/
+.vscode/
+*.code-workspace
+
+# Rider / JetBrains
+.idea/
+*.DotSettings.user
+
+# Logs / Dumps
+*.log
+*.tld
+*.pid
+*.svclog
+*.scc
+
+# Sistema
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Pacotes
+*.nupkg
+packages/
+.nuget/
+*.snupkg
+
+# Cache
+*.cache
+*.db
+*.db-journal
+
+# Env
+.env
+.env.*
+
+# Docker
+docker-compose.override.yml
+*.tar
+
+# Certificados dev
+*.pfx
+*.p12
+
+# EF Migrations snapshots (opcional, se quiser ignorar)
+# Migrations/
+
+# Testes
+TestResult*/
+TestResults/
+
+# Publish local
+publish/
+wwwroot/

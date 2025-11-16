@@ -117,7 +117,7 @@ namespace SistemaAdministracao.Controllers
             _context.Usuarios.Remove(usuario);
 
             await _context.SaveChangesAsync();
-            return NoContent();
+            return Ok(new { message = $"Usuário {usuario.Nome} foi deletado com sucesso." });
         }
     }
 }

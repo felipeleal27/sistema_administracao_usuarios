@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "iWb7ylRqPXg=",
+  "dgSpecHash": "nRcW4mPbPNc=",
   "success": true,
   "projectFilePath": "c:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\felipe.leal\\.nuget\\packages\\dotnetenv\\3.0.0\\dotnetenv.3.0.0.nupkg.sha512",
+    "C:\\Users\\felipe.leal\\.nuget\\packages\\dotnetenv\\3.1.1\\dotnetenv.3.1.1.nupkg.sha512",
     "C:\\Users\\felipe.leal\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\felipe.leal\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\felipe.leal\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",

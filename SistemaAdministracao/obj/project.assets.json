@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "DotNetEnv/3.0.0": {
+      "DotNetEnv/3.1.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.Extensions.Configuration": "1.1.2",
@@ -2298,15 +2298,16 @@
     }
   },
   "libraries": {
-    "DotNetEnv/3.0.0": {
-      "sha512": "ddE17PtN+lijtSQH9NYk9vzCikHs1wPhiVxgwvLrWFPru0kYvh+8nSbjo18iZYFOznu83g5zrKrYYKHf3iK1vw==",
+    "DotNetEnv/3.1.1": {
+      "sha512": "o4SqUVCq0pqHF/HYsZk6k22XGIVmvsDVo+Dy7l0ubq9uQ45JkXswrMRJmYvhGLXWFYF0M5OupMonytB+0zvpGQ==",
       "type": "package",
-      "path": "dotnetenv/3.0.0",
+      "path": "dotnetenv/3.1.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
-        "dotnetenv.3.0.0.nupkg.sha512",
+        "README.md",
+        "dotnetenv.3.1.1.nupkg.sha512",
         "dotnetenv.nuspec",
         "lib/netstandard1.3/DotNetEnv.dll"
       ]
@@ -7329,7 +7330,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "DotNetEnv >= 3.0.0",
+      "DotNetEnv >= 3.1.1",
       "Microsoft.EntityFrameworkCore >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.0",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 8.0.10",
@@ -7390,7 +7391,7 @@
         "dependencies": {
           "DotNetEnv": {
             "target": "Package",
-            "version": "[3.0.0, )"
+            "version": "[3.1.1, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

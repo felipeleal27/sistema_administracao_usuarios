@@ -6,10 +6,15 @@ Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("Postgres");
+var rawConnection = builder.Configuration.GetConnectionString("Postgres");
+
+var senha = Environment.GetEnvironmentVariable("DB_PASSWORD");
+
+var connectionString = rawConnection.Replace("__DB_PASSWORD__", senha);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

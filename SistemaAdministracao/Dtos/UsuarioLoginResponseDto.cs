@@ -3,6 +3,6 @@
     public class UsuarioLoginResponseDto
     {
         public string Token { get; set; } = null!;
-        public List<int> Papeis { get; set; } = new();
+        public List<String> Permissoes { get; set; } = new();
     }
 }

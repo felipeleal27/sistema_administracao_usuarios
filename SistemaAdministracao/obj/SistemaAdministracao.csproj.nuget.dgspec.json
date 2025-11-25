@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj": {}
+    "C:\\Users\\hdner\\Documents\\GitHub\\sistema_administracao_usuarios\\SistemaAdministracao\\SistemaAdministracao.csproj": {}
   },
   "projects": {
-    "c:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj": {
+    "C:\\Users\\hdner\\Documents\\GitHub\\sistema_administracao_usuarios\\SistemaAdministracao\\SistemaAdministracao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj",
+        "projectUniqueName": "C:\\Users\\hdner\\Documents\\GitHub\\sistema_administracao_usuarios\\SistemaAdministracao\\SistemaAdministracao.csproj",
         "projectName": "SistemaAdministracao",
-        "projectPath": "c:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\SistemaAdministracao.csproj",
-        "packagesPath": "C:\\Users\\felipe.leal\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\felipe.leal\\Desktop\\8Periodo\\Camila\\SistemaAdministracao\\SistemaAdministracao\\obj\\",
+        "projectPath": "C:\\Users\\hdner\\Documents\\GitHub\\sistema_administracao_usuarios\\SistemaAdministracao\\SistemaAdministracao.csproj",
+        "packagesPath": "C:\\Users\\hdner\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hdner\\Documents\\GitHub\\sistema_administracao_usuarios\\SistemaAdministracao\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\felipe.leal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hdner\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,9 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.telerik.com/v3/index.json": {},
-          "https://pkgs.dev.azure.com/GAProjetos/_packaging/GAProjetos/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -46,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -94,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using SistemaAdministracao.Data;
 using SistemaAdministracao.Dtos;
 using SistemaAdministracao.Models;
+using SistemaAdministracao.Services;
 using SistemaAdministracao.Validations;
 using System.Linq;
 
@@ -45,22 +46,40 @@ namespace SistemaAdministracao.Controllers
             return Ok(usuario);
         }
 
-        [HttpGet("GetUser")]
-        public async Task<ActionResult<Usuario>> GetUser([FromBody] UsuarioCreateDto dto)
-        {
+        
 
+        [HttpPost("Login")]
+        public async Task<ActionResult<UsuarioLoginResponseDto>> Login([FromBody] UsuarioLoginDto dto)
+        {
             if (!EmailValidator.IsValid(dto.Email))
                 return BadRequest("O e-mail informado é inválido.");
 
             var usuario = await _context.Usuarios
                 .Include(u => u.UsuariosPapeis)
+                    .ThenInclude(up => up.Papel)
                 .FirstOrDefaultAsync(u => u.Nome == dto.Nome && u.Email == dto.Email);
 
             if (usuario == null)
                 return NotFound("Usuário não encontrado.");
-             
-            return Ok(usuario);
+
+
+            var tokenService = new TokenService();
+            var token = tokenService.Generate(usuario);
+
+
+            var papeis = usuario.UsuariosPapeis
+                .Select(up => up.IdPapel)
+                .ToList();
+
+            var response = new UsuarioLoginResponseDto
+            {
+                Token = token,
+                Papeis = papeis
+            };
+
+            return Ok(response);
         }
+
 
 
         [HttpPost("Create")]

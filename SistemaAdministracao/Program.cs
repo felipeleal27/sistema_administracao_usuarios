@@ -12,6 +12,13 @@ var senha = Environment.GetEnvironmentVariable("DB_PASSWORD");
 
 var connectionString = rawConnection.Replace("__DB_PASSWORD__", senha);
 
+builder.Services.AddControllers().AddJsonOptions(o =>
+{
+    o.JsonSerializerOptions.ReferenceHandler =
+        System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+});
+
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
 

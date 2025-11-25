@@ -46,7 +46,7 @@ namespace SistemaAdministracao.Controllers
             return Ok(usuario);
         }
 
-        
+
 
         [HttpPost("Login")]
         public async Task<ActionResult<UsuarioLoginResponseDto>> Login([FromBody] UsuarioLoginDto dto)
@@ -57,28 +57,33 @@ namespace SistemaAdministracao.Controllers
             var usuario = await _context.Usuarios
                 .Include(u => u.UsuariosPapeis)
                     .ThenInclude(up => up.Papel)
+                        .ThenInclude(p => p.PapeisPermissoes)
+                            .ThenInclude(pp => pp.Permissao)
                 .FirstOrDefaultAsync(u => u.Nome == dto.Nome && u.Email == dto.Email);
 
             if (usuario == null)
                 return NotFound("Usuário não encontrado.");
 
-
+            
             var tokenService = new TokenService();
             var token = tokenService.Generate(usuario);
 
-
-            var papeis = usuario.UsuariosPapeis
-                .Select(up => up.IdPapel)
+            
+            var permissoes = usuario.UsuariosPapeis
+                .SelectMany(up => up.Papel!.PapeisPermissoes)
+                .Select(pp => pp.Permissao!.Nome)
+                .Distinct()
                 .ToList();
 
             var response = new UsuarioLoginResponseDto
             {
                 Token = token,
-                Papeis = papeis
+                Permissoes = permissoes
             };
 
             return Ok(response);
         }
+
 
 
 

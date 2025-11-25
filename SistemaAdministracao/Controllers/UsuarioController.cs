@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SistemaAdministracao.Data;
 using SistemaAdministracao.Dtos;
 using SistemaAdministracao.Models;
+using SistemaAdministracao.Validations;
 using System.Linq;
 
 namespace SistemaAdministracao.Controllers
@@ -38,10 +40,28 @@ namespace SistemaAdministracao.Controllers
                 .FirstOrDefaultAsync(u => u.Id == id);
 
             if (usuario == null)
-                return NotFound();
+                return NotFound("Usuário não encontrado.");
 
             return Ok(usuario);
         }
+
+        [HttpGet("GetUser")]
+        public async Task<ActionResult<Usuario>> GetUser([FromBody] UsuarioCreateDto dto)
+        {
+
+            if (!EmailValidator.IsValid(dto.Email))
+                return BadRequest("O e-mail informado é inválido.");
+
+            var usuario = await _context.Usuarios
+                .Include(u => u.UsuariosPapeis)
+                .FirstOrDefaultAsync(u => u.Nome == dto.Nome && u.Email == dto.Email);
+
+            if (usuario == null)
+                return NotFound("Usuário não encontrado.");
+             
+            return Ok(usuario);
+        }
+
 
         [HttpPost("Create")]
         public async Task<ActionResult<Usuario>> Create(UsuarioCreateDto dto)
@@ -51,6 +71,9 @@ namespace SistemaAdministracao.Controllers
                 Nome = dto.Nome,
                 Email = dto.Email
             };
+
+            if (!EmailValidator.IsValid(usuario.Email))
+                return BadRequest("O e-mail informado é inválido.");
 
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
@@ -75,12 +98,17 @@ namespace SistemaAdministracao.Controllers
         [HttpPut("Update/{id}")]
         public async Task<IActionResult> Update(int id, UsuarioCreateDto dto)
         {
+            if (!EmailValidator.IsValid(dto.Email))
+                return BadRequest("O e-mail informado é inválido.");
+
             var usuario = await _context.Usuarios
                 .Include(u => u.UsuariosPapeis)
                 .FirstOrDefaultAsync(u => u.Id == id);
 
+            
+
             if (usuario == null)
-                return NotFound();
+                return NotFound("Usuário não encontrado.");
 
             usuario.Nome = dto.Nome;
             usuario.Email = dto.Email;
@@ -111,7 +139,7 @@ namespace SistemaAdministracao.Controllers
                 .FirstOrDefaultAsync(u => u.Id == id);
 
             if (usuario == null)
-                return NotFound();
+                return NotFound("Usuário não encontrado.");
 
             _context.UsuariosPapeis.RemoveRange(usuario.UsuariosPapeis ?? Enumerable.Empty<UsuarioPapel>());
             _context.Usuarios.Remove(usuario);
